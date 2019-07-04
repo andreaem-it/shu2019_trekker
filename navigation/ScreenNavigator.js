@@ -1,9 +1,10 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from "../screens/HomeScreen";
 import TrailsScreen from "../screens/TrailsScreen";
 import TrailDetailsScreen from "../screens/TrailDetailsScreen";
+import TrailSelectedScreen from "../screens/TrailSelectedScreen";
 
 const config = Platform.select({
     web: { headerMode: 'screen' },
@@ -15,9 +16,13 @@ const HomeStack = createStackNavigator(
     {
         Home: {
           screen: HomeScreen,
-          navigationOptions: {
-            header: null,
-          },
+          navigationOptions: ({navigation}) => ({
+          title: 'Home',
+          headerStyle: styles.headerStyle,
+          headerTitle: 'Home',
+          headerLeft : null,
+          headerRight: null,
+        })
         },
         Trails: {
           screen: TrailsScreen,
@@ -30,6 +35,12 @@ const HomeStack = createStackNavigator(
           navigationOptions: {
             header: null,
           }
+        },
+        TrailSelected: {
+          screen: TrailSelectedScreen,
+          navigationOptions: {
+            header: null,
+          }
         }
     },
     {
@@ -37,12 +48,26 @@ const HomeStack = createStackNavigator(
       headerMode: 'screen',
       headerVisible: false
     },
+    {
+        navigationOptions: {
+            header: null,
+        },
+    },
     config
 );
 
 const screenNavigator = createStackNavigator({
     HomeStack,
 },
-);
+{
+  headerMode: 'none',
+});
+
+const styles = StyleSheet.create ({
+  headerStyle: {
+    height: 0,
+    flex: 1,
+  }
+})
 
 export default screenNavigator;

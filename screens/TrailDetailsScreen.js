@@ -25,6 +25,7 @@ export default class TrailDetailsScreen extends React.Component {
     return (
       <View>
         <Image source={Trail1} style={styles.topImage}/>
+
       </View>
     )}
 
@@ -33,6 +34,8 @@ export default class TrailDetailsScreen extends React.Component {
 const styles = StyleSheet.create ({
   topImage: {
     width: 450,
-    height: 250
+    height: 450,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   }
 })

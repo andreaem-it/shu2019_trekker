@@ -250,40 +250,41 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: 'transparent',
-    paddingVertical: 6
+    paddingVertical: 0
   },
   column: {
 
   },
   itemContainerLeft: {
-    height: 200,
-    width: 150,
+    height: 300,
+    width: 210,
     borderWidth: 1,
     borderColor: '#000',
     backgroundColor: '#05595C',
-    borderRadius: 10,
-    marginLeft: 50,
+    borderRadius: 0,
+    marginLeft: 0,
   },
   itemContainerRight: {
-    height: 200,
-    width: 150,
+    height: 300,
+    width: 210,
     borderWidth: 1,
     borderColor: '#000',
     backgroundColor: '#05595C',
-    borderRadius: 10,
-    marginRight: 50,
+    borderRadius: 0,
+    marginRight: 0,
   },
   imageContainer: {
     height: 130,
-    backgroundColor: '#000',
-    borderRadius: 10
+    backgroundColor: '#666',
+    borderRadius: 0
   },
   image: {
-    height: 129,
-    width: 148,
-    borderRadius: 10,
+    height: 229,
+    width: 218,
+    borderRadius: 0,
   },
   titleContainer: {
+    marginTop: 100,
     height: 35,
     backgroundColor: '#05595C'
   },
@@ -302,7 +303,7 @@ const styles = StyleSheet.create({
   button: {
     height: 35,
     backgroundColor: '#000',
-    borderRadius: 10
+    borderRadius: 0
   },
   buttonText: {
     color: '#FFF',
@@ -314,7 +315,7 @@ const styles = StyleSheet.create({
   },
   tabBarInfoContainer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: -5,
     left: 0,
     right: 0,
     ...Platform.select({
@@ -331,7 +332,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#58929F',
     paddingVertical: 10,
-    zIndex: 10
   },
   tabBarInfoText: {
     fontSize: 17,
