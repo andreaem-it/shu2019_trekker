@@ -51,6 +51,10 @@ export default class TrailsScreen extends React.Component {
             <View style={styles.mainContainer}>
               <View style={styles.column}>
                 <View style={styles.itemContainerLeft}>
+                <TouchableOpacity
+                  style = {styles.button}
+                  onPress = {() => navigate('TrailDetails')}
+                >
                   <View style={styles.imageContainer}>
                     <Image
                       style={styles.image}
@@ -59,6 +63,7 @@ export default class TrailsScreen extends React.Component {
                       />
                   </View>
                   <View style={styles.titleContainer}>
+
                     <Text style={styles.title}>
                       Bitch Lake
                     </Text>
@@ -66,13 +71,6 @@ export default class TrailsScreen extends React.Component {
                       Down your dock - Home (HQ)
                     </Text>
                   </View>
-                  <TouchableOpacity
-                    style = {styles.button}
-                    onPress = {() => navigate('TrailDetails')}
-                  >
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -201,7 +199,7 @@ export default class TrailsScreen extends React.Component {
 const styles = StyleSheet.create({
   topBarContainer: {
     height: 50,
-    backgroundColor: '#FFF',
+    backgroundColor: 'transparent',
     marginTop: 20,
     marginBottom: 20,
   },
