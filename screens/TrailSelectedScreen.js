@@ -1,128 +1,109 @@
 import React, { Component }  from 'react';
 
 import {
+  Platform,
   View,
   Text,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  PermissionAndroid
 } from 'react-native';
 import { Avatar } from 'react-native-elements';
-import MapView, { AnimatedRegion, Polyline, Marker } from 'react-native-maps';
-
-const LATITUDE = '';
-const LONGITUDE = '';
-const LATITUDE_DELTA = 0;
-const LONGITUDE_DELTA = 0;
+import MapView, { AnimatedRegion, Polyline, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Geolocation } from 'react-native-geolocation-service';
 
 export default class TrailSelectedScreen extends React.Component {
+
 
   constructor(props) {
   super(props);
   this.state = {
-    latitude: LATITUDE,
-    longitude: LONGITUDE,
+    latitude: 42.9564927,
+    longitude: 12.7067667,
+    latitudeDelta: 0.02,
+    longitudeDelta: 0.05,
     routeCoordinates: [],
     distanceTravelled: 0,
     prevLatLng: {},
     coordinate: new AnimatedRegion({
-     latitude: LATITUDE,
-     longitude: LONGITUDE
-    })
+     latitude: 42.9564927,
+     longitude: 12.7067667
+   }),
+   error: null
   };
+
 }
 
-componentDidMount() {
-    this.watchID = navigator.geolocation.watchPosition(
-      position => {
-        const { coordinate, routeCoordinates, distanceTravelled } =   this.state;
-        const { latitude, longitude } = position.coords;
+componentDidMount()
+    {
+      navigator.geolocation.getCurrentPosition(
+        (position) => console.log(position),
+        (err) => console.log(err),
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 10000 }
+      );
 
-        const newCoordinate = {
-          latitude,
-          longitude
-        };
-        if (Platform.OS === "android") {
-          if (this.marker) {
-            this.marker._component.animateMarkerToCoordinate(
-              newCoordinate,
-              500
-            );
-           }
-         } else {
-           coordinate.timing(newCoordinate).start();
-         }
-         this.setState({
-           latitude,
-           longitude,
-           routeCoordinates: routeCoordinates.concat([newCoordinate]),
-           distanceTravelled:
-           distanceTravelled + this.calcDistance(newCoordinate),
-           prevLatLng: newCoordinate
-         });
-       },
-       error => console.log(error),
-       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-    );
-    if (Platform.OS === "android") {
-      if (this.marker) {
-      this.marker._component.animateMarkerToCoordinate(
-        newCoordinate,
-        500
-       );
-      }
-    } else {
-      coordinate.timing(newCoordinate).start();
-    }
-    this.setState({
-      latitude,
-      longitude,
-      routeCoordinates: routeCoordinates.concat([newCoordinate]),
-      distanceTravelled: distanceTravelled + this.calcDistance(newCoordinate),
-      prevLatLng: newCoordinate
-    });
+     // Geolocation.getCurrentPosition(
+     //     (position) => {
+     //         console.log(position);
+     //         this.setState({
+     //           latitude: position.coords.latitude,
+     //           longitude: position.coords.longitude,
+     //           latitudeDelta: 0.03,
+     //           longitudeDelta: 0.05,
+     //           error: null,
+     //         });
+     //     },
+     //     (error) => {
+     //         // See error code charts below.
+     //         console.log(error.code, error.message);
+     //     },{
+     //       enableHighAccuracy: true,
+     //       timeout: 15000,
+     //       maximumAge: 10000
+     //     }
+     // );
+   }
 
-  }
+
   getMapRegion = () => ({
     latitude: this.state.latitude,
     longitude: this.state.longitude,
-    latitudeDelta: LATITUDE_DELTA,
-    longitudeDelta: LONGITUDE_DELTA
+    latitudeDelta: this.state.latitudeDelta,
+    longitudeDelta: this.state.longitudeDelta
   });
 
 render = () => {
-  return (
-    <View>
-    <MapView
-      style={styles.map}
-      showUserLocation
-      followUserLocation
-      loadingEnabled
-      region={this.getMapRegion()}
-      >
-      <Polyline coordinates={this.state.routeCoordinates} strokeWidth={5} />
-      <Marker.Animated
-        ref={marker => {
-          this.marker = marker;
-        }}
-        coordinate={this.state.coordinate}
-      />
+    return (
+      <View>
+      <MapView
+         zoom="19"
+         ref={MapView => (this.MapView = MapView)}
+         style={styles.map}
+         initialRegion={this.state.region}
+         loadingEnabled = {true}
+         loadingIndicatorColor="#666666"
+         loadingBackgroundColor="#eeeeee"
+         moveOnMarkerPress = {false}
+         showsUserLocation={true}
+         showsCompass={true}
+         showsPointsOfInterest = {false}
+         provider="google">
       </MapView>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={[styles.bubble, styles.button]}>
-          <Text style={styles.bottomBarContent}>
-            {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-          </Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={[styles.bubble, styles.button]}>
+            <Text style={styles.bottomBarContent}>
+              {parseFloat(this.state.distanceTravelled).toFixed(2)} km
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  )
+    )
+  }
 }
 
-
-}
-
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   map: {
-
+    height: '80%',
+    width: '100%',
   }
 })
