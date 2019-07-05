@@ -72,6 +72,8 @@ componentDidMount()
     longitudeDelta: this.state.longitudeDelta
   });
 
+
+
 render = () => {
     return (
       <View>

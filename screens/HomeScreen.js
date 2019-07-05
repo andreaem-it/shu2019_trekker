@@ -30,8 +30,8 @@ render() {
         <View style={styles.headerColumn}>
         <Avatar
           source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',}}
-          showEditButton rounded
-          size= {100}
+          rounded
+          size= {120}
           title='AF'
           style={{ height: 120, width: 120, marginTop: 100, borderColor: 'black', borderWidth: 5, borderRadius: 150}}
           />
