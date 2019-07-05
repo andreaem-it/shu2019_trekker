@@ -52,7 +52,7 @@ render() {
             <View style={{width: 150, height: 150, marginLeft: 50, backgroundColor: '#01696D', zIndex: 5}}>
               <View style={{height: 120, width: 150}}>
               </View>
-              <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: '0.5'}}>
+              <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: 0.5}}>
                 <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Trails</Text>
               </View>
             </View>
@@ -60,7 +60,7 @@ render() {
           <View style={{width: 150, height: 150, marginRight: 50, backgroundColor: '#01696D', zIndex: 5}}>
             <View style={{height: 120, width: 150}}>
             </View>
-            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: '0.5'}}>
+            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: 0.5}}>
               <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Tools</Text>
             </View>
           </View>
@@ -69,14 +69,14 @@ render() {
           <View style={{width: 150, height: 150, marginLeft: 50, backgroundColor: '#01696D', zIndex: 5}}>
             <View style={{height: 120, width: 150}}>
             </View>
-            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: '0.5'}}>
+            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: 0.5}}>
               <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Leaderboards</Text>
             </View>
           </View>
           <View style={{width: 150, height: 150, marginRight: 50, backgroundColor: '#DB6725', zIndex: 5}}>
             <View style={{height: 120, width: 150}}>
             </View>
-            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: '0.5'}}>
+            <View style={{height: 30, width: 150, backgroundColor: '#00211e', opacity: 0.5}}>
               <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Settings</Text>
             </View>
           </View>
