@@ -52,7 +52,6 @@ export default class TrailsScreen extends React.Component {
               <View style={styles.column}>
                 <View style={styles.itemContainerLeft}>
                 <TouchableOpacity
-                  style = {styles.button}
                   onPress = {() => navigate('TrailDetails')}
                 >
                   <View style={styles.imageContainer}>
@@ -198,10 +197,12 @@ export default class TrailsScreen extends React.Component {
 
 const styles = StyleSheet.create({
   topBarContainer: {
+    position: 'absolute',
     height: 50,
+    width: '100%',
     backgroundColor: 'transparent',
-    marginTop: 20,
-    marginBottom: 20,
+    top: 50,
+    zIndex: 100
   },
   topBar: {
     height: 50,
@@ -251,11 +252,11 @@ const styles = StyleSheet.create({
     paddingVertical: 0
   },
   column: {
-
+    width: '50%'
   },
   itemContainerLeft: {
     height: 300,
-    width: 210,
+    width: '100%',
     borderWidth: 1,
     borderColor: '#000',
     backgroundColor: '#05595C',
@@ -264,7 +265,7 @@ const styles = StyleSheet.create({
   },
   itemContainerRight: {
     height: 300,
-    width: 210,
+    width: '100%',
     borderWidth: 1,
     borderColor: '#000',
     backgroundColor: '#05595C',
@@ -272,18 +273,22 @@ const styles = StyleSheet.create({
     marginRight: 0,
   },
   imageContainer: {
-    height: 130,
+    height: '100%',
+    width: '100%',
     backgroundColor: '#666',
     borderRadius: 0
   },
   image: {
-    height: 229,
-    width: 218,
+    height: '100%',
+    width: '100%',
     borderRadius: 0,
   },
   titleContainer: {
-    marginTop: 100,
-    height: 35,
+    position: 'absolute',
+    top: '70%',
+    left: 0,
+    right: 0,    
+    height: 40,
     backgroundColor: '#05595C'
   },
   title: {
