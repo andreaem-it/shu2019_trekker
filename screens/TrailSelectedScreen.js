@@ -144,7 +144,7 @@ render = () => {
             </Text>
           </View>
         </View>
-        <ImageBackground style={styles.bottomBG} source={BottomBG} imageStyle={{resizeMode: 'contain'}}>
+        <ImageBackground style={styles.bottomBG} source={BottomBG} imageStyle={{resizeMode: 'cover'}}>
           <View style={styles.textContainer}>
             <Text style={styles.title}>Monte Vettore & Pilato Lake</Text>
             <Text style={styles.subTitle}>Castelluccio di Norcia (PG)</Text>
@@ -186,8 +186,48 @@ render = () => {
               </View>
             </View>
           </View>
+          <View style={styles.optionsColumns}>
+            <TouchableOpacity
+            >
+              <View style={styles.defaultBtn}>
+                <View style={styles.iconContainer}>
+                </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.text}>
+                      Trail Info
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+            onPress = {() => navigate('Sessions')}
+            >
+              <View style={styles.defaultBtn}>
+                <View style={styles.iconContainer}>
+                </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.text}>
+                      Sessions
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </View>
         </ImageBackground>
+        <View>
+            <TouchableOpacity
+              onPress = {() => navigate('TrailSelected')}
+            >
+            <View style={styles.tabBarInfoContainer}>
 
+                <Text style={styles.tabBarInfoText}>
+                  Start AR
+                </Text>
+
+            </View>
+            </TouchableOpacity>
+
+        </View>
 
       </View>
     )
@@ -196,7 +236,7 @@ render = () => {
 
 const styles = StyleSheet.create({
   map: {
-    height: '40%',
+    height: '45%',
     width: '100%',
   },
   middleBarContainer: {
@@ -269,7 +309,7 @@ const styles = StyleSheet.create({
   },
   bottomBG: {
     width: '100%',
-    height: '100%',
+    height: '45%',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     zIndex: -10,
@@ -295,4 +335,71 @@ const styles = StyleSheet.create({
     position: 'relative',
     marginHorizontal: '30%'
   },
+  bottomBtn: {
+    position: 'relative',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 30,
+    backgroundColor: '#000'
+  },
+  btnText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+  },
+  tabBarInfoContainer: {
+    position: 'relative',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: -3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 20,
+      },
+    }),
+    alignItems: 'center',
+    backgroundColor: '#000000',
+    paddingVertical: 20,
+  },
+  tabBarInfoText: {
+    fontSize: 22,
+    color: '#FFF',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  optionsColumns: {
+    flex: 0,
+    flexDirection: 'row',
+    marginTop: 50,
+  },
+  defaultBtn: {
+    flex: 0,
+    flexDirection: 'column',
+    backgroundColor: '#01696D',
+    height: 80,
+    width: 80,
+    marginLeft: 40,
+    marginRight: 20,
+    borderRadius: 10
+  },
+  iconContainer: {
+    height: '80%',
+    width: '100%'
+  },
+  textContainer: {
+    height: '20%',
+    opacity: 0.5,
+    backgroundColor: '#000',
+    borderRadius: 10
+  },
+  text: {
+    textAlign: 'center',
+    color: '#FFFFFF'
+  }
 })

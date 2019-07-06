@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import TrailsScreen from "../screens/TrailsScreen";
 import TrailDetailsScreen from "../screens/TrailDetailsScreen";
 import TrailSelectedScreen from "../screens/TrailSelectedScreen";
+import SessionsScreen from "../screens/SessionsScreen";
 
 const config = Platform.select({
     web: { headerMode: 'screen' },
@@ -41,6 +42,9 @@ const HomeStack = createStackNavigator(
           navigationOptions: {
             header: null,
           }
+        },
+        Sessions: {
+          screen: SessionsScreen
         }
     },
     {
