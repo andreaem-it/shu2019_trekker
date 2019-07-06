@@ -157,9 +157,7 @@ export default class TrailDetailsScreen extends React.Component {
 
         </View>
       </View>
-
-
-
+      
     )}
 
   }

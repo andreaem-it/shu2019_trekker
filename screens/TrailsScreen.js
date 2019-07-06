@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import Trail1 from '../assets/trails/2.jpg';
+import blank from '../assets/images/mountain.jpg';
 
 export default class TrailsScreen extends React.Component {
   static navigationOptions = {
@@ -74,22 +75,26 @@ export default class TrailsScreen extends React.Component {
                 </View>
               </View>
               <View style={styles.column}>
-                <View style={styles.itemContainerRight}>
+                <View style={styles.itemContainerLeft}>
+                <TouchableOpacity
+                  onPress = {() => navigate('TrailDetails')}
+                >
                   <View style={styles.imageContainer}>
-
+                    <Image
+                      style={styles.image}
+                      source={blank}
+                      imageStyle={{resizeMode: 'contain'}}
+                      />
                   </View>
                   <View style={styles.titleContainer}>
+
                     <Text style={styles.title}>
-                      Bitch Lake
+                      Add new Trail
                     </Text>
                     <Text style={styles.location}>
-                      Down your dock - Home (HQ)
+
                     </Text>
                   </View>
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -97,86 +102,26 @@ export default class TrailsScreen extends React.Component {
             <View style={styles.mainContainer}>
               <View style={styles.column}>
                 <View style={styles.itemContainerLeft}>
-                  <View style={styles.imageContainer}>
 
-                  </View>
-                  <View style={styles.titleContainer}>
-                    <Text style={styles.title}>
-                      Bitch Lake
-                    </Text>
-                    <Text style={styles.location}>
-                      Down your dock - Home (HQ)
-                    </Text>
-                  </View>
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
-                  </TouchableOpacity>
                 </View>
               </View>
               <View style={styles.column}>
-                <View style={styles.itemContainerRight}>
-                  <View style={styles.imageContainer}>
+                <View style={styles.itemContainerLeft}>
 
-                  </View>
-                  <View style={styles.titleContainer}>
-                    <Text style={styles.title}>
-                      Bitch Lake
-                    </Text>
-                    <Text style={styles.location}>
-                      Down your dock - Home (HQ)
-                    </Text>
-                  </View>
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
-                  </TouchableOpacity>
                 </View>
               </View>
             </View>
             <View style={styles.mainContainer}>
-              <View style={styles.column}>
-                <View style={styles.itemContainerLeft}>
-                  <View style={styles.imageContainer}>
+            <View style={styles.column}>
+              <View style={styles.itemContainerLeft}>
 
-                  </View>
-                  <View style={styles.titleContainer}>
-                    <Text style={styles.title}>
-                      Bitch Lake
-                    </Text>
-                    <Text style={styles.location}>
-                      Down your dock - Home (HQ)
-                    </Text>
-                  </View>
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
-                  </TouchableOpacity>
-                </View>
               </View>
-              <View style={styles.column}>
-                <View style={styles.itemContainerRight}>
-                  <View style={styles.imageContainer}>
+            </View>
+            <View style={styles.column}>
+              <View style={styles.itemContainerLeft}>
 
-                  </View>
-                  <View style={styles.titleContainer}>
-                    <Text style={styles.title}>
-                      Bitch Lake
-                    </Text>
-                    <Text style={styles.location}>
-                      Down your dock - Home (HQ)
-                    </Text>
-                  </View>
-                  <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>
-                      Discover
-                    </Text>
-                  </TouchableOpacity>
-                </View>
               </View>
+            </View>
             </View>
           </ScrollView>
           <View style={styles.tabBarInfoContainer}>

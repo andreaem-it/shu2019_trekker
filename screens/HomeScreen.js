@@ -12,6 +12,9 @@ import {
 import { Avatar } from 'react-native-elements';
 import topBarBG from '../assets/images/Profile/topBarBG.png';
 import bottomBG from '../assets/images/Profile/bottomBG.png';
+import iconTrails from '../assets/images/iconTrails.png';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -53,6 +56,12 @@ render() {
               >
                 <View style={{backgroundColor: '#01696D', zIndex: 5}}>
                   <View style={{height: 120, width: '100%'}}>
+                  <Icon
+                    name="map-marker"
+                    size={80}
+                    color="white"
+                    style={styles.icon}
+                  />
                   </View>
                   <View style={{height: 30, width: '100%', backgroundColor: '#00211e', opacity: 0.5}}>
                     <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Trails</Text>
@@ -63,6 +72,12 @@ render() {
               <TouchableOpacity style={{width: '30%', height: 150, marginRight: '15%'}}>
               <View style={{backgroundColor: '#01696D', zIndex: 5}}>
                 <View style={{height: 120, width: '100%'}}>
+                <Icon
+                  name="wrench"
+                  size={80}
+                  color="white"
+                  style={styles.icon}
+                />
                 </View>
                 <View style={{height: 30, width: '100%', backgroundColor: '#00211e', opacity: 0.5}}>
                   <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Tools</Text>
@@ -77,6 +92,12 @@ render() {
               >
               <View style={{backgroundColor: '#01696D', zIndex: 5}}>
                 <View style={{height: 120, width: '100%'}}>
+                <Icon
+                  name="map"
+                  size={80}
+                  color="white"
+                  style={styles.icon}
+                />
                 </View>
                 <View style={{height: 30, width: '100%', backgroundColor: '#00211e', opacity: 0.5}}>
                   <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Marker</Text>
@@ -87,6 +108,12 @@ render() {
               <TouchableOpacity style={{width: '30%', height: 150, marginRight: '15%'}}>
               <View style={{backgroundColor: '#DB6725', zIndex: 5}}>
                 <View style={{height: 120, width: '100%'}}>
+                <Icon
+                  name="gear"
+                  size={80}
+                  color="white"
+                  style={styles.icon}
+                />
                 </View>
                 <View style={{height: 30, width: '100%', backgroundColor: '#00211e', opacity: 0.5}}>
                   <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Settings</Text>
@@ -131,7 +158,7 @@ const styles = StyleSheet.create({
     zIndex: -10,
   },
   buttonContainer: {
-    height: '50%',
+    height: '60%',
   },
   headerColumn: {
     backgroundColor: 'transparent',
@@ -217,4 +244,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#2e78b7',
   },
+  icon: {
+    marginHorizontal: 27,
+    marginVertical: 27,
+    width: 80,
+    height: 80
+  }
 });
