@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     zIndex: -10,
   },
   buttonContainer: {
-    height: '50%',
+    height: '60%',
   },
   headerColumn: {
     backgroundColor: 'transparent',
