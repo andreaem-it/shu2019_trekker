@@ -47,29 +47,7 @@ componentDidMount()
         (err) => console.log(err),
         { enableHighAccuracy: true, timeout: 8000, maximumAge: 10000 }
       );
-
-     // Geolocation.getCurrentPosition(
-     //     (position) => {
-     //         console.log(position);
-     //         this.setState({
-     //           latitude: position.coords.latitude,
-     //           longitude: position.coords.longitude,
-     //           latitudeDelta: 0.03,
-     //           longitudeDelta: 0.05,
-     //           error: null,
-     //         });
-     //     },
-     //     (error) => {
-     //         // See error code charts below.
-     //         console.log(error.code, error.message);
-     //     },{
-     //       enableHighAccuracy: true,
-     //       timeout: 15000,
-     //       maximumAge: 10000
-     //     }
-     // );
    }
-
 
   getMapRegion = () => ({
     latitude: this.state.latitude,
@@ -77,8 +55,6 @@ componentDidMount()
     latitudeDelta: this.state.latitudeDelta,
     longitudeDelta: this.state.longitudeDelta
   });
-
-
 
 render = () => {
     return (
@@ -90,14 +66,15 @@ render = () => {
            loadingEnabled = {true}
            loadingIndicatorColor="#666666"
            loadingBackgroundColor="#eeeeee"
-           moveOnMarkerPress = {false}
+           moveOnMarkerPress = {true}
            showsUserLocation={true}
            showsCompass={true}
            showsPointsOfInterest = {false}
            zoomEnabled = {true}
            pitchEnabled={true}
            rotateEnabled={true}
-           provider={null}>
+           provider={'google'}>
+           
         </MapView>
         <View style={styles.middleBarContainer}>
           <View style={styles.middleBarRow}>
@@ -146,22 +123,11 @@ render = () => {
             </Text>
           </View>
         </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={[styles.bubble, styles.button]}>
-            <Text style={styles.bottomBarContent}>
-              {parseFloat(this.state.distanceTravelled).toFixed(2)} km
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <ImageBackground
-            source={BottomBG}
-          >
-            <View>
+        <ImageBackground style={styles.bottomBG} source={BottomBG} imageStyle={{resizeMode: 'contain'}}>
 
-            </View>
-          </ImageBackground>
-        </View>
+        </ImageBackground>
+
+
       </View>
     )
   }
@@ -169,7 +135,7 @@ render = () => {
 
 const styles = StyleSheet.create({
   map: {
-    height: '70%',
+    height: '40%',
     width: '100%',
   },
   middleBarContainer: {
@@ -182,32 +148,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    zIndex: 10
+    zIndex: 10,
   },
   middleBarRow: {
     flex: 0,
     flexDirection: 'column',
-    marginHorizontal: -5
+    marginHorizontal: -5,
   },
   diff1: {
     color: '#589F5D',
     marginVertical: 10,
     marginLeft: 0,
-    marginRight: 10
+    marginRight: 10,
   },
   diff2: {
     color: '#FFFFFF',
     opacity: 0.5,
     marginVertical: 10,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   diff3: {
     color: '#FFFFFF',
     opacity: 0.5,
     marginVertical: 10,
     marginLeft: 10,
-    marginRight: 30
+    marginRight: 30,
   },
   trailDiffTxt: {
     color: '#FFFFFF',
@@ -217,7 +183,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginRight: 30,
     marginRight: 80,
-    minWidth: 50
+    minWidth: 50,
   },
   trailTxt: {
     color: '#FFFFFF',
@@ -226,7 +192,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 12,
     marginRight: 20,
-    minWidth: 50
+    minWidth: 50,
   },
   trekkerIcon: {
     marginTop: 12,
@@ -240,4 +206,12 @@ const styles = StyleSheet.create({
     height: 20,
     marginRight: 20,
   },
+  bottomBG: {
+    width: '100%',
+    height: '100%',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    zIndex: -10,
+    marginTop: -10
+  }
 })

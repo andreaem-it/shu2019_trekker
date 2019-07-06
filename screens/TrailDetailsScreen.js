@@ -32,65 +32,65 @@ export default class TrailDetailsScreen extends React.Component {
     return (
       <View style={styles.topImageContainer}>
         <ImageBackground source={Trail1} style={styles.topImage}>
-        <View>
-          <TouchableOpacity
-            onPress = {() => navigate('Trails')}
-          >
-            <View>
-            <Icon
-              name="arrow-left"
-              size={30}
-              color="white"
-              style={styles.backBtn}
-            />
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={{height: '70%'}}>
-        </View>
-        <View style={styles.info}>
-          <View style={styles.ratingContainer}>
-            <View style={styles.ratingColumn}>
+          <View>
+            <TouchableOpacity
+              onPress = {() => navigate('Trails')}
+            >
+              <View>
               <Icon
-                name="star"
+                name="arrow-left"
                 size={30}
-                color="gold"
+                color="white"
+                style={styles.backBtn}
               />
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={{height: '70%'}}>
+          </View>
+          <View style={styles.info}>
+            <View style={styles.ratingContainer}>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
             </View>
-            <View style={styles.ratingColumn}>
-              <Icon
-                name="star"
-                size={30}
-                color="gold"
-              />
-            </View>
-            <View style={styles.ratingColumn}>
-              <Icon
-                name="star"
-                size={30}
-                color="gold"
-              />
-            </View>
-            <View style={styles.ratingColumn}>
-              <Icon
-                name="star"
-                size={30}
-                color="gold"
-              />
-            </View>
-            <View style={styles.ratingColumn}>
-              <Icon
-                name="star"
-                size={30}
-                color="gold"
-              />
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>Monte Vettore & Pilato Lake</Text>
+              <Text style={styles.subTitle}>Castelluccio di Norcia (PG)</Text>
             </View>
           </View>
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Monte Vettore & Pilato Lake</Text>
-            <Text style={styles.subTitle}>Castelluccio di Norcia (PG)</Text>
-          </View>
-        </View>
         </ImageBackground>
         <View style={styles.middleBarContainer}>
           <View style={styles.middleBarRow}>

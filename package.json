@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@expo/samples": "~3.0.0",
+    "@mapbox/polyline": "^1.1.0",
     "@react-native-community/geolocation": "^1.4.2",
     "@react-navigation/web": "^1.0.0-alpha.9",
     "expo": "^33.0.0",
