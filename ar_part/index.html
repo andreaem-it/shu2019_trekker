@@ -1,0 +1,29 @@
+<!doctype HTML>
+<html>
+<script src="aframe.min.js"></script>
+<script src="aframe-ar.js"></script>
+
+
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+
+    <a-assets>
+    <a-asset-item id="crate-obj" src="mountvector.obj"></a-asset-item>
+    <a-asset-item id="crate-mtl" src="mountvector.mtl"></a-asset-item>
+    </a-assets>
+
+      <a-marker preset="hiro">
+      <!--a-marker preset='custom' type='pattern' url='marker/pattern-logo.patt'-->
+
+        <a-obj-model src="#crate-obj" mtl="#crate-mtl" scale="0.005 0.005 0.005"></a-obj-model>
+
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+    <a href="trekkify://onesto" style="position: absolute; bottom: 3vh; left: 5vw; right: 5vw; padding: 2em;
+    color: #ffffff; background: #01696d; text-align: center; text-transform: uppercase; text-decoration: none;
+    font-family: sans-serif; font-weight: bold">OPEN APP</a>
+
+  </body>
+</html>
