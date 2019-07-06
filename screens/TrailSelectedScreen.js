@@ -18,7 +18,10 @@ import IconClock from '../assets/images/icon-clock.png';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BottomBG from '../assets/images/2-layers.png';
 
+
+
 export default class TrailSelectedScreen extends React.Component {
+
 
 
   constructor(props) {
@@ -33,8 +36,20 @@ export default class TrailSelectedScreen extends React.Component {
     prevLatLng: {},
     coordinate: new AnimatedRegion({
      latitude: 42.9564927,
-     longitude: 12.7067667
+     longitude: 12.7067667,
    }),
+    marker: {
+      latlng: '42.7978912,13.2659697',
+      title: 'Monte Vettore'
+    },
+    initial: {
+      latitude : '42.7894',
+      longitude : '13.2583'
+    },
+    final: {
+      latitude : '42.826178',
+      longitude : '13.265216'
+    },
    error: null
   };
 
@@ -74,7 +89,13 @@ render = () => {
            pitchEnabled={true}
            rotateEnabled={true}
            provider={'google'}>
-           
+           <MapView.Polyline
+             coordinates={[
+                { latitude: 42.7894, longitude: 13.2583},
+                { latitude: 42.826178,longitude: 13.265216}
+             ]}
+             strokeWidth={4}
+            />
         </MapView>
         <View style={styles.middleBarContainer}>
           <View style={styles.middleBarRow}>
@@ -124,7 +145,47 @@ render = () => {
           </View>
         </View>
         <ImageBackground style={styles.bottomBG} source={BottomBG} imageStyle={{resizeMode: 'contain'}}>
-
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Monte Vettore & Pilato Lake</Text>
+            <Text style={styles.subTitle}>Castelluccio di Norcia (PG)</Text>
+            <View style={styles.ratingContainer}>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+              <View style={styles.ratingColumn}>
+                <Icon
+                  name="star"
+                  size={30}
+                  color="gold"
+                />
+              </View>
+            </View>
+          </View>
         </ImageBackground>
 
 
@@ -213,5 +274,25 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     zIndex: -10,
     marginTop: -10
-  }
+  },
+  titleContainer: {
+    textAlign: 'center',
+    marginTop: 100
+  },
+  title: {
+    marginTop: 30,
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: '800'
+  },
+  subTitle: {
+    textAlign: 'center',
+    fontSize: 20
+  },
+  ratingContainer: {
+    flex: 0,
+    flexDirection: 'row',
+    position: 'relative',
+    marginHorizontal: '30%'
+  },
 })
