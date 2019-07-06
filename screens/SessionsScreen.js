@@ -6,8 +6,11 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-
+  Image
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import IconTrekker from '../assets/images/icon-trekker.png';
+import IconClock from '../assets/images/icon-clock.png';
 
 export default class SessionsScreen extends React.Component {
   render = () => {
@@ -66,10 +69,35 @@ export default class SessionsScreen extends React.Component {
     </View>
   )}
 };
-
-const styles = StyleSheet.create {
+const styles = StyleSheet.create({
+  tabBarInfoContainer: {
+    position: 'relative',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: -3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 20,
+      },
+    }),
+    alignItems: 'center',
+    backgroundColor: '#000000',
+    paddingVertical: 20,
+  },
+  tabBarInfoText: {
+    fontSize: 22,
+    color: '#FFF',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
   middleBarContainer: {
-    marginTop: -20,
+    marginTop: 0,
     backgroundColor: '#01696D',
     height: 45,
     width: '100%',
@@ -136,4 +164,4 @@ const styles = StyleSheet.create {
     height: 20,
     marginRight: 20,
   },
-}
+})

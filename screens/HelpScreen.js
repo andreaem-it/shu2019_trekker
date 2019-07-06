@@ -10,5 +10,6 @@ import {
 } from 'react-native';
 
 export default class HelpScreen extends React.Component {
-  
+
 }
+ 

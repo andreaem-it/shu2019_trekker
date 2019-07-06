@@ -72,6 +72,8 @@ componentDidMount()
   });
 
 render = () => {
+  const {navigate} = this.props.navigation;
+
     return (
       <View>
         <MapView
@@ -192,7 +194,7 @@ render = () => {
               <View style={styles.defaultBtn}>
                 <View style={styles.iconContainer}>
                 </View>
-                <View style={styles.textContainer}>
+                <View style={styles.textContainerBtn}>
                   <Text style={styles.text}>
                       Trail Info
                   </Text>
@@ -205,9 +207,33 @@ render = () => {
               <View style={styles.defaultBtn}>
                 <View style={styles.iconContainer}>
                 </View>
-                <View style={styles.textContainer}>
+                <View style={styles.textContainerBtn}>
                   <Text style={styles.text}>
                       Sessions
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+            >
+              <View style={styles.defaultBtn}>
+                <View style={styles.iconContainer}>
+                </View>
+                <View style={styles.textContainerBtn}>
+                  <Text style={styles.text}>
+                      Download Map
+                  </Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+            >
+              <View style={styles.orangeBtn}>
+                <View style={styles.iconContainer}>
+                </View>
+                <View style={styles.textContainerBtn}>
+                  <Text style={styles.text}>
+                      GET HELP
                   </Text>
                 </View>
               </View>
@@ -384,15 +410,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#01696D',
     height: 80,
     width: 80,
-    marginLeft: 40,
-    marginRight: 20,
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 10
+  },
+  orangeBtn: {
+    flex:0,
+    flexDirection: 'column',
+    backgroundColor: '#F3AF53',
+    height: 80,
+    width: 80,
+    marginLeft: 10,
+    marginRight: 10,
     borderRadius: 10
   },
   iconContainer: {
     height: '80%',
     width: '100%'
   },
-  textContainer: {
+  textContainerBtn: {
     height: '20%',
     opacity: 0.5,
     backgroundColor: '#000',
@@ -400,6 +436,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    fontSize: 12
   }
 })
