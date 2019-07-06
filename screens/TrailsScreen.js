@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Avatar } from 'react-native-elements';
-import Trail1 from '../assets/trails/1.jpg';
+import Trail1 from '../assets/trails/2.jpg';
 
 export default class TrailsScreen extends React.Component {
   static navigationOptions = {
@@ -40,7 +40,7 @@ export default class TrailsScreen extends React.Component {
               style={styles.topBarAvatar}
               />
               <View style={styles.topBarTextContainer}>
-                <Text style={styles.topBarUserName}>ALFONSO</Text>
+                <Text style={styles.topBarUserName}>JOHN</Text>
                 <View style={styles.topBarSeparator}/>
                 <Text style={styles.topBarUserLevel}>Newbie</Text>
               </View>
@@ -64,10 +64,10 @@ export default class TrailsScreen extends React.Component {
                   <View style={styles.titleContainer}>
 
                     <Text style={styles.title}>
-                      Bitch Lake
+                      Monte Vettore & Pilato Lake
                     </Text>
                     <Text style={styles.location}>
-                      Down your dock - Home (HQ)
+                      Castelluccio di Norcia (PG)
                     </Text>
                   </View>
                   </TouchableOpacity>
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '70%',
     left: 0,
-    right: 0,    
+    right: 0,
     height: 40,
     backgroundColor: '#05595C'
   },

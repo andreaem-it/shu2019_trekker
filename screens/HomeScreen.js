@@ -35,9 +35,9 @@ render() {
           title='AF'
           style={{ height: 120, width: 120, marginTop: 100, borderColor: 'black', borderWidth: 5, borderRadius: 150}}
           />
-          <Text style={styles.userNameText}>ALFONSO FONSATO</Text>
+          <Text style={styles.userNameText}>JOHN DOE</Text>
           <Text style={{ color:'#FFF'}}>
-            Trekker Pippa
+            Trekker Newbie
           </Text>
         </View>
       </ImageBackground>
