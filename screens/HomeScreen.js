@@ -72,12 +72,14 @@ render() {
             </View>
 
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between' , zIndex: 5, marginTop: '10%'}}>
-              <TouchableOpacity style={{width: '30%', height: 150, marginLeft: '15%'}}>
+              <TouchableOpacity style={{width: '30%', height: 150, marginLeft: '15%'}}
+                onPress= {() => navigate('Ar')}
+              >
               <View style={{backgroundColor: '#01696D', zIndex: 5}}>
                 <View style={{height: 120, width: '100%'}}>
                 </View>
                 <View style={{height: 30, width: '100%', backgroundColor: '#00211e', opacity: 0.5}}>
-                  <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Leaderboards</Text>
+                  <Text style={{textAlign: 'center', color: '#FFF', textAlignVertical: 'center', fontSize: 22, marginTop: 5}}>Marker</Text>
                 </View>
               </View>
               </TouchableOpacity>
